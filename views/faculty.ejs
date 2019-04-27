@@ -1,0 +1,78 @@
+<html>
+<head>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1 class="header"> IIIT Bangalore </h1>
+
+<ul class="a">
+  <li><a class="active" href="./">Home</a></li>
+  <li><a href="./faculty">Faculty</a></li>
+  <li><a href="./courses">Subjects</a></li>
+  <li><a href="./students">Students</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Properties</a>
+    <div class="dropdown-content">
+      <a href="./inverse">Inverse</a>
+      <a href="./symmetric">Symmetric</a>
+      <a href="./transitive">Transitive</a>
+      <a href="./functional">Functional</a>
+    </div>
+  </li>
+</ul>
+
+<br>
+<br>
+<br>
+
+<h2>Enter the faculty details</h2>
+
+<div class = "fac-text">
+<form method="post" action="/faculty/add">
+  
+  <label>Faculty ID: </label>
+  <input type="text" name="fac_id"><br><br>
+
+  <label>Faculty Name: </label>
+  <input type="text" name="fac_name"><br><br>
+
+  <label>Gender: </label>
+  <input type="text" name="fac_gender"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+</div>
+
+<h2>Add subject taught by a faculty</h2> 
+  <div class = "fac-text">
+  <form method="post" action="/faculty/teaches/add">
+  
+  <label>Faculty Name: </label>
+  <input type="text" name="fac_name"><br><br>
+
+  <label>Subject:  &nbsp;&nbsp;</label>
+  <input type="text" name="Subject_Name"><br><br>
+
+  <input type="submit" value="Submit">
+  </form>
+  </div>
+
+
+<H2>Faculty Details of IIIT Bangalore</H2>
+
+<table id="customers">
+  <tr>
+    <th>Faculty ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+  </tr>
+  <% Faculty.forEach(function(fac){ %>
+  <tr>
+    <td><%= fac.id %></td>
+    <td><%= fac.name %></td>
+    <td><%= fac.gender %></td>
+  </tr>
+  <% }) %>
+</table>
+</body>
+</html>

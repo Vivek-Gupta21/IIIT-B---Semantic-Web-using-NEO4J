@@ -1,0 +1,127 @@
+<html>
+<head>
+<style>
+
+ul a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<ul class="a">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#">Student</a></li>
+  <li><a href="#">Faculty</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Properties</a>
+    <div class="dropdown-content">
+      <a href="#">Inverse</a>
+      <a href="#">Symmetric</a>
+      <a href="#">Transitive</a>
+      <a href="#">Functional</a>
+    </div>
+  </li>
+</ul>
+
+<form method="post" action="/student/add">
+  <label>Student Roll No.</label><br>
+  <input type="text" name="roll_no"><br>
+  <label>Student Name</label><br>
+  <input type="text" name="stu_name"><br>
+  <label>Student Gender</label><br>
+  <input type="text" name="stu_gender"><br>
+  <label>Student CGPA</label><br>
+  <input type="float" name="cgpa"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<form method="post" action="/staff/add">
+  <label>Subject Name</label><br>
+  <input type="text" name="Subject_Name"><br>
+  <label>Credits</label><br>
+  <input type="text" name="Subject_Credit"><br>
+  <input type="submit" value="Submit">
+</form>
+<h3>Add subjects taken by student (hasTaken Relationship)</h3>
+<form method="post" action="/student/takenby/add">
+  <label>Student Name</label><br>
+  <input type="text" name="stu_name"><br>
+  <label>Subject Name</label><br>
+  <input type="text" name="Subject_Name"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<h1>IIITB STUDENTS</h1>
+<ul>
+<% students.forEach(function(student){ %>
+  <li><%= student.id %></li>
+  <li><%= student.name %></li>
+  <li><%= student.gender %></li>
+  <li><%= student.cgpa %></li>
+<% }) %>
+</ul>
+
+
+<h1>IIITB COURSENAME</h1>
+<ul>
+<% Subjects.forEach(function(st){ %>
+  <li>Subject: <%= st.Subject_Name %> &nbsp;&nbsp; &nbsp; Credits: <%= st.Subject_Credit %></li>
+<% }) %>
+</ul>
+
+
+
+</body>
+</html>

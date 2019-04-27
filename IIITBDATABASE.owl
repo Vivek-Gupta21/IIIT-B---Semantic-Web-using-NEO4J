@@ -1,0 +1,557 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#"
+     xml:base="http://www.semanticweb.org/root/ontologies/2019/2/IIITB"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#integer -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#HasTaken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#HasTaken">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#IsStudentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#IsStudentOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#HasTaken"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#IsTaughtBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#IsTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#IsTaughtBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#teaches"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Is_Classmate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Is_Classmate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#enrolled -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#enrolled">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#teaches">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#CGPA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#CGPA">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty_Id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty_Id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Gender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programme_Duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programme_Duration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subject_Credits -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subject_Credits">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subject_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subject_Name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#courseName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#courseName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#full_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#full_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#DigiSoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#DigiSoc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 years</Programme_Duration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithms</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse102 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse102">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Structures</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Machine Learning</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds102 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds102">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Modelling</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Embedded Systems</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece102 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece102">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SemiConductors</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.Tech.CSE</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.Tech.ECE</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IM.Tech.CSE</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IM.Tech.ECE</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt101 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt101">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Networking&amp;Communication</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt1012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt1012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Subjects"/>
+        <IsTaughtBy rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4"/>
+        <Subject_Credits rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Subject_Credits>
+        <Subject_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyber Security</Subject_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MS_Research</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research"/>
+        <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
+        <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHD</courseName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse101"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds101"/>
+        <Faculty_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F101</Faculty_Id>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chandrashehra</full_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse102"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds102"/>
+        <Faculty_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F102</Faculty_Id>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G.Raghvan</full_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece101"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt101"/>
+        <Faculty_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F103</Faculty_Id>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.Das</full_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Faculty"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece102"/>
+        <teaches rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt1012"/>
+        <Faculty_Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F104</Faculty_Id>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jyotsana</full_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse101"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse102"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2"/>
+        <Is_Classmate rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student2"/>
+        <enrolled rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas1"/>
+        <CGPA rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.85</CGPA>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prerna Arora</full_name>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mt2018084</student_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#cse101"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds101"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ds102"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff1"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff2"/>
+        <Is_Classmate rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student1"/>
+        <enrolled rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas3"/>
+        <CGPA rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.56</CGPA>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Princy Goel</full_name>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mt2018085</student_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece101"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#ece102"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4"/>
+        <enrolled rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas4"/>
+        <CGPA rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.38</CGPA>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamini Sharma</full_name>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MT2018135</student_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#student4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Student"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt101"/>
+        <HasTaken rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#nt1012"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff3"/>
+        <IsStudentOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#staff4"/>
+        <enrolled rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res2"/>
+        <CGPA rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.95</CGPA>
+        <Gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Gender>
+        <full_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivek Gupta</full_name>
+        <student_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MT2018134</student_id>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
