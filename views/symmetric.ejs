@@ -29,11 +29,11 @@
   
 <h2>Triples with Symmetric Property</h2>
 
-<h1>Classmates</h1>
-<table id="customers">
+<h2>Classmates</h2>
+
+<table id="customers_a"  style="float: left">
   <tr>
     <th>Student A</th> 
-    <th>Student B</th>
   </tr>
 
   <% studentA.forEach(function(cls){ %>
@@ -41,13 +41,17 @@
     <td><%= cls.name %></td>
   </tr>
   <% }) %>
+</table>
 
+<table id="customers_a"  style="float: left">
+  <tr>
+     <th>Student B</th>
+  </tr>
    <% studentB.forEach(function(cls){ %>
   <tr>
     <td><%= cls.name %></td>
   </tr>
   <% }) %>
-
 </table>
 
 </body>

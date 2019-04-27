@@ -68,6 +68,43 @@ h2{
   background-color: #335383;
   color: white;
 }
+
+
+
+
+
+
+
+
+#customers_a {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
+
+#customers_a td, #customers_a th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers_a tr:nth-child(odd){background-color: #969bd1;}
+#customers_a tr:nth-child(even){background-color: #ffffff;}
+#customers_a tr:hover {background-color: #b8b8b8;}
+
+#customers_a th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #335383;
+  color: white;
+}
+
+
+
+
+
+
+
 /* -------UNORDERED LIST AND DROPDOWN LIST----------- */
 
 ul.a{
