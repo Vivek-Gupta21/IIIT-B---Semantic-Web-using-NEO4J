@@ -245,22 +245,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -275,7 +259,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#DigiSoc -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#DigiSoc">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 years</Programme_Duration>
     </owl:NamedIndividual>
     
@@ -350,7 +334,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.Tech.CSE</courseName>
     </owl:NamedIndividual>
@@ -360,7 +344,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.Tech.ECE</courseName>
     </owl:NamedIndividual>
@@ -370,7 +354,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IM.Tech.CSE</courseName>
     </owl:NamedIndividual>
@@ -380,7 +364,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas4 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#mas4">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#masters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IM.Tech.ECE</courseName>
     </owl:NamedIndividual>
@@ -412,7 +396,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MS_Research</courseName>
     </owl:NamedIndividual>
@@ -422,7 +406,7 @@
     <!-- http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#res2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#research"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/root/ontologies/2019/2/IIITB#Programmes"/>
         <Programme_Duration rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 Years</Programme_Duration>
         <courseName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHD</courseName>
     </owl:NamedIndividual>

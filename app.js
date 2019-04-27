@@ -214,14 +214,10 @@ app.post('/subject/add', function(req, res){
 });
 
 
-
 app.get('/functional',function(req,res){
 	session
-		.run('MATCH (a:ns0__Student)-[r:ns0__enrolled]->(b:ns0__masters) RETURN a,b')
+		.run('MATCH (a:ns0__Student)-[r:ns0__enrolled]->(b:ns0__Programmes) RETURN a,b')
 		.then(function(result1){
-			session
-				.run('MATCH (a:ns0__Student)-[r:ns0__enrolled]->(b:ns0__research) RETURN a,b')
-				.then(function(result2){
 					var enrolled= [];
 					result1.records.forEach(function(record){
 						enrolled.push({
@@ -229,21 +225,11 @@ app.get('/functional',function(req,res){
 							course_name: record._fields[1].properties.ns0__courseName
 						});
 					});
-					result2.records.forEach(function(record){
-						enrolled.push({
-							stu_name: record._fields[0].properties.ns0__full_name,
-							course_name: record._fields[1].properties.ns0__courseName
-						})
-					});
 
 					res.render('functional',{
 						Enrolled: enrolled
 					});
 				})
-				.catch(function(err){
-					console.log(err);
-				});
-			})
 			.catch(function(err){
 				console.log(err);
 			});
@@ -332,6 +318,27 @@ app.post('/faculty/add', function(req,res){
 
 	res.redirect('/faculty');
 });
+
+
+app.post('/student/enrolled/add', function(req,res){
+	var stu_name = req.body.stu_name;
+	var programme = req.body.course_name;
+
+	session
+		.run('MATCH (a:ns0__Student{ns0__full_name:{stunameParam}}),(b:ns0__Programmes{ns0__courseName:{programmeParam}}) MERGE(a)-[r:ns0__enrolled]->(b) RETURN a.ns0__full_name', {stunameParam:stu_name, programmeParam:programme})
+		.then(function(result){
+			res.redirect('/students');
+			session.close();
+		})
+		.catch(function(err){
+			console.log(err);
+		});
+
+	res.redirect('/faculty');
+});
+
+
+
 
 
 
